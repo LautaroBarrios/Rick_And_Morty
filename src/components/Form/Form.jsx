@@ -1,6 +1,6 @@
+import styles from "./Form.module.css"
 import { useState } from "react";
 import validation from "../Validation/Validation";
-import styles from "./Form.module.css"
 
 const Form = ({login}) => {
     const [ errors, setErrors] = useState({

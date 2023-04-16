@@ -10,7 +10,6 @@ const Detail = () => {
     const [character, setCharacter] = useState({});
 
     useEffect(() => {
-        // axios(`https://rickandmortyapi.com/api/character/${id}`)
       axios(`${URL_BASE}/${id}?key=${API_KEY}`)
         .then(response => response.data)
         .then(( data ) => {
