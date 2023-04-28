@@ -1,3 +1,4 @@
+import styles from "./Card.module.css"
 import { Link } from "react-router-dom";
 import { addFav, removeFav } from "../../redux/actions/actions";
 import { connect } from "react-redux";
@@ -27,6 +28,7 @@ function Card({id, name, status, species, gender, origin, image, onClose, addFav
 
    return (      
       <div>
+         <img className={styles.image} src={image} alt='' />
          <Link to={`/detail/${id}`}>
             <h2>{name}</h2>
          </Link>
@@ -34,7 +36,6 @@ function Card({id, name, status, species, gender, origin, image, onClose, addFav
          <h2>{species}</h2>
          <h2>{gender}</h2>
          <h2>{origin}</h2>
-         <img src={image} alt='' />
          <button onClick={() => onClose(id)}>X</button>
          <button onClick={handleFavorite}>{isFav ? '❤️' : '🤍'}</button>
       </div>
